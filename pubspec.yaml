@@ -1,0 +1,83 @@
+name: movie_app
+description: a movie app
+
+version: 1.0.4+4
+homepage: https://www.baidu.com
+
+publish_to: "none"
+
+environment:
+  sdk: ">=2.16.1 <3.0.0"
+  flutter: ">=2.10.1"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
+  dio: ^4.0.1
+  webview_flutter: 2.3.0
+  desktop_window: 0.4.0
+  pull_to_refresh: ^2.0.0
+  json_annotation: ^4.4.0
+  utils:
+    path: packages/utils
+  design:
+    path: packages/design
+  share_widgets:
+    path: packages/share_widgets
+  equatable: ^2.0.3
+  flutter_bloc: ^8.0.1
+  hydrated_bloc: ^8.1.0
+  movie_api: 
+    path: packages/movie_api
+  movie_repository: 
+    path: packages/movie_repository
+  remote_movie_api: 
+    path: packages/remote_movie_api
+  bloc_concurrency: ^0.2.0
+  stream_transform: ^2.0.0
+  flutter_services_binding: ^0.1.0
+  open_file: ^3.2.1
+  file_picker: ^4.5.1
+  flutter_slidable: ^1.2.0
+  package_info_plus: ^1.4.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: ^2.1.5
+  json_serializable: ^6.1.1
+  flutter_gen_runner: ^4.1.5
+
+flutter_gen:
+  output: lib/gen/
+  line_length: 120
+
+flutter:
+  generate: true
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/images/home/
+    - assets/images/login/
+
+  fonts:
+    - family: Pingfang
+      fonts:
+        - asset: assets/fonts/pingfang/PingFang-Regular.ttf
+        - asset: assets/fonts/pingfang/PingFang-ExtraLight.ttf
+          weight: 100
+        - asset: assets/fonts/pingfang/PingFang-Light.ttf
+          weight: 200
+        - asset: assets/fonts/pingfang/PingFang-Medium.ttf
+          weight: 400
+        - asset: assets/fonts/pingfang/PingFang-Bold.ttf
+          weight: 500
+        - asset: assets/fonts/pingfang/PingFang-Heavy.ttf
+          weight: 700
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/roboto/Roboto-Thin.ttf

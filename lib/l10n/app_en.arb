@@ -1,0 +1,73 @@
+{
+  "title": "movie",
+  "@title": {
+    "description": "Title for the application",
+    "type": "text",
+    "placeholders": {}
+  },
+  "confirm": "confirm",
+  "@confirm": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "worker": "worker",
+  "@worker": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "movie": "movie",
+  "@movie": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actor": "actor",
+  "@actor": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "setting": "setting",
+  "@setting": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "my": "my",
+  "@my": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "followSystem": "Follow the system",
+  "@followSystem": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lightTheme": "Light",
+  "@lightTheme": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "darkTheme": "Dark",
+  "@darkTheme": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "language": "Language",
+  "@language": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "searchButton": "Search",
+  "@searchButton": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "theme": "Theme",
+  "@theme": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "checkUpdate": "Check the update",
+  "@checkUpdate": {
+    "type": "text",
+    "placeholders": {}
+  }
+}

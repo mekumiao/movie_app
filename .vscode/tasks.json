@@ -1,0 +1,121 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "flutter",
+      "command": "flutter",
+      "args": [
+        "build",
+        "apk",
+        "--target-platform=android-arm64",
+        "--obfuscate",
+        "--split-debug-info=./symbols"
+      ],
+      "group": "build",
+      "problemMatcher": [],
+      "label": "flutter: flutter build apk"
+    },
+    {
+      "type": "flutter",
+      "command": "flutter",
+      "args": [
+        "build",
+        "web",
+        "--web-renderer=html",
+        "--release",
+        "--dart-define=FLUTTER_WEB_CANVASKIT_URL=canvaskit/"
+      ],
+      "group": "build",
+      "problemMatcher": [],
+      "label": "flutter: flutter build web"
+    },
+    {
+      "label": "flutter: flutter build web and apk",
+      "dependsOn": ["flutter: flutter build web", "flutter: flutter build apk"],
+      "problemMatcher": "$msCompile",
+      "dependsOrder": "sequence"
+    },
+    {
+      "type": "flutter",
+      "command": "flutter",
+      "options": {
+        "cwd": "${workspaceFolder}/${input:package_root_folder}"
+      },
+      "args": ["pub", "run", "build_runner", "build"],
+      "problemMatcher": ["$dart-build_runner"],
+      "group": "build",
+      "label": "flutter: flutter pub run build_runner build"
+    },
+    {
+      "type": "flutter",
+      "command": "flutter",
+      "options": {
+        "cwd": "${workspaceFolder}/${input:package_root_folder}"
+      },
+      "args": [
+        "pub",
+        "run",
+        "build_runner",
+        "build",
+        "--delete-conflicting-outputs"
+      ],
+      "problemMatcher": ["$dart-build_runner"],
+      "group": "build",
+      "label": "flutter: flutter pub run build_runner build delete-outputs"
+    },
+    {
+      "type": "flutter",
+      "command": "flutter",
+      "args": ["build", "windows"],
+      "group": "build",
+      "problemMatcher": [],
+      "label": "flutter: flutter build windows"
+    },
+    {
+      "type": "flutter",
+      "command": "flutter",
+      "options": { "cwd": "${workspaceFolder}/${input:package_root_folder}" },
+      "args": ["pub", "get"],
+      "problemMatcher": [],
+      "label": "flutter: flutter pub get"
+    },
+    {
+      "type": "shell",
+      "command": "./upload_apk.ps1",
+      "options": { "cwd": "${workspaceFolder}/" },
+      "args": [],
+      "problemMatcher": [],
+      "label": "publish apk to server"
+    },
+    {
+      "type": "shell",
+      "command": "./update_remark.ps1",
+      "options": { "cwd": "${workspaceFolder}/" },
+      "args": ["${input:apk_version_remark}"],
+      "problemMatcher": [],
+      "label": "update release apk remark"
+    }
+  ],
+  "inputs": [
+    {
+      "type": "pickString",
+      "id": "package_root_folder",
+      "description": "select package root folder",
+      "options": [
+        "./",
+        "packages/movie_api/",
+        "packages/design/",
+        "packages/movie_repository/",
+        "packages/remote_movie_api/",
+        "packages/share_widgets/",
+        "packages/utils/"
+      ]
+    },
+    {
+      "id": "apk_version_remark",
+      "type": "promptString",
+      "default": "1.发布新版本`n",
+      "description": "apk version remark"
+    }
+  ]
+}
